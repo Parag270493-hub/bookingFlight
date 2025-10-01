@@ -1,0 +1,12 @@
+[build]
+  # Build command for Angular production
+  command = "ng build --configuration production"
+  
+  # Folder to publish (replace 'your-project-name' with actual name)
+  publish = "dist/your-project-name"
+
+# Redirect all routes to index.html (Angular SPA support)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
