@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -15,10 +16,11 @@ export class TicketComponent {
   departureTime: string = '09:30';
 
   // Sample flight metadata
-  flightNumber: string = 'AI-203';
+  // flightNumber: string = 'AI-203';
   seatNumber: string = '';
   bookedUserData: any;
   bookedUserName: any;
+  bookedFlightData: any;
   boardingGate: string = '';
   constructor(private route: Router, private http: HttpClient) { }
 
@@ -28,6 +30,8 @@ export class TicketComponent {
     this.bookedUserName = userName[0]
     let flightData = localStorage.getItem('flightData')
     this.bookedUserData = flightData && JSON.parse(flightData);
+    let bookedData = localStorage.getItem('bookedData');
+    this.bookedFlightData = bookedData && JSON.parse(bookedData)
     this.generateSeatNumber();
     this.generateBoardingGate();
   }

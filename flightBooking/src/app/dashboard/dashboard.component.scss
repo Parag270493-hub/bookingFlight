@@ -1,146 +1,221 @@
-
 .flightDetails {
-    display: flex;
-    align-items: center;
-    background-image: url("../../assets/Image/airpot\ image.jpg");
-    background-size: cover;
-    margin-top: -106px;
-    margin-left: -120px;
-    width: 1536px;
-    height: 713px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* push content to left */
+  background-image: url("../../assets/Image/airpot image.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* prevent scroll */
 }
-#form{
-    background-color: #000;
-    height: 512px;
-    width: 461px;
-    margin: auto;
-    padding: 20px;
-    opacity: 0.7;
+
+#form {
+  background: rgba(0, 0, 0, 0.8); /* smooth transparency */
+  height: auto;
+  width: 420px;
+  padding: 18px 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  margin-left: 20px; /* push from left */
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in-out;
 }
-#form h3{
-    border-bottom: 2px solid #3399ff;
-    width:210px;
-    padding: 5px;
+
+#form h3 {
+  border-bottom: 2px solid #3399ff;
+  width: fit-content;
+  padding: 5px;
+  color: #3399ff;
+  font-family: 'Rubik', sans-serif;
 }
-::placeholder{
-    color:#fff
+
+.bookingForm {
+  color: #fff;
+  font-family: 'Sono', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
-#input #input-group{
-    width:300px;
-    margin:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background: transparent;
-    color:#fff
+
+::placeholder {
+  color: #ddd;
 }
-#input2 #input-group{
-    width:195px;
-    margin:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background: transparent;
-    color:#fff
+
+#input #input-group,
+#input2 #input-group,
+#input4 #input-group,
+#input6 #input-group {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #3399ff;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
 }
-#input3 #input-group{
-    margin-left: 50px;
+
+#input #input-group:focus,
+#input2 #input-group:focus,
+#input4 #input-group:focus,
+#input6 #input-group:focus {
+  border-color: #ff9800;
+  outline: none;
 }
-#input4 #input-group{
-    width:300px;
-    margin:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background: transparent;
-    color:#fff
+
+select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #3399ff;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 }
-#input4 #input-group1{
-    width:615px;
-    margin:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background: transparent;
-    color:#fff
+
+select:focus {
+  border-color: #ff9800;
+  outline: none;
 }
-#input5 h3{
-    border-bottom: 2px solid #3399ff;
-    width:220px;
-    padding: 5px;
-}
-#input6 #input-group{
-    width:300px;
-    margin:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background: transparent;
-    color:#fff
-}
-#input6 #input-group1{
-    width:615px;
-    margin:5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background: transparent;
-    color:#fff
-}
+
 .bookTicket {
-    margin-top: 52px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
 }
+
 .bookNow {
-    margin-right: 31px;
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
 }
-.bookingForm{
-    color: white;
-    font-family: 'Sono', sans-serif;
+
+.bookNow:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff5722, #ff9800);
 }
+
+.btn-primary {
+  background: #3399ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background: #2979ff;
+}
+
 .invalid-input {
-    color: red;
-    font-size: 15px;
-    margin-top: -9px
-}
-  .form-group {
-    margin-bottom: 1rem;
-    margin-left: -33rem;
+  color: #ff4c4c;
+  font-size: 13px;
+  margin-top: -5px;
 }
 
 .flight-list {
-    margin-top: -16rem;
-    margin-left: 12rem;
-}
-table{
-    text-align: left;
-    color: white;
-    border-collapse: collapse;
+  position: absolute;
+  top: 50%;
+  right: 60px; /* push from right side */
+  transform: translateY(-50%); /* center vertically */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px;
+  border-radius: 15px;
+  width: 600px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  animation: slideIn 1s ease-in-out;
 }
 
-table td , table th{
-    border: 1px solid white;
-    padding: 10px;
-    width: 8rem;
-    font-family: 'Rubik', sans-serif;
+.list {
+  color: #3399ff;
+  font-family: 'Sono', sans-serif;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3399ff;
+  padding-bottom: 5px;
+  letter-spacing: 1px;
 }
-.list{
-    color: #fff;
-    font-family: 'Sono', sans-serif;
+
+.flightMessage {
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 15px;
+  font-style: italic;
 }
-.flightMessage{
-    color: white;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  overflow: hidden;
+  border-radius: 10px;
 }
-.flightBooking{
-    width: 102%;
-    border-radius: 20px;
+
+thead {
+  background: linear-gradient(45deg, #3399ff, #2979ff);
 }
-.formStyle {
-    margin-left: 38%;
-    margin-top: 4%;
+
+thead th {
+  padding: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tbody tr {
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:hover {
+  background: rgba(51, 153, 255, 0.3);
+}
+
+td {
+  padding: 12px;
+}
+
+.flightBooking {
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  border: none;
+  padding: 8px 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  color: #fff !important;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.flightBooking:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff5722, #ff9800);
+}
+
+/* Smooth slide-in animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+/* smooth fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
 }

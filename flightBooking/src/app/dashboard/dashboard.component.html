@@ -9,7 +9,7 @@
         class="form-group"
       >
         <!--form-->
-        <h1 class="text-center bookingForm">Airline Booking Form</h1>
+        <!-- <h1 class="text-center bookingForm">Airline Booking Form</h1> -->
         <div id="form">
           <!--form-->
           <h3 class="text-white">Booking Details</h3>
@@ -166,10 +166,7 @@
           <td>{{ item.to }}</td>
           <td>{{ item.time }}</td>
           <td>
-            <button
-              class="btn btn-warning text-white flightBooking"
-              (click)="bookFlight()"
-            >
+            <button class="flightBooking" (click)="bookFlight(item)">
               Book Now
             </button>
           </td>

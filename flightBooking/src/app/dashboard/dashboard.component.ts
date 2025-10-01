@@ -49,7 +49,8 @@ export class DashboardComponent {
     });
 
   }
-  bookFlight() {
+  bookFlight(item: any) {
+    localStorage.setItem('bookedData', JSON.stringify(item));
     Swal.fire({
       text: 'Are you sure want to book the ticket',
       icon: 'question',

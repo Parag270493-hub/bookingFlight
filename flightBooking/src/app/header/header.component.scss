@@ -1,59 +1,87 @@
-a.logo {
-    font-size: 34px;
-    margin-top: -53px;
-    text-decoration: none;
-    color: beige;
-}
-  
+/* NAVBAR STYLING */
 .nav {
     display: flex;
     justify-content: space-between;
-    font-family: 'Sono', sans-serif;
-  }
-  
-  .nav h1 {
-    color: white;
-    margin: 0;
-    font-size: 40px;
-  }
-  
-  .nav ul {
-      display: inline-flex;
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-  }
-  
-  .nav ul li{
-      padding-left: 15px;
-      padding-top: 15px;
-  }
-  
-  .nav ul a {
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-      font-family: 'Sono', sans-serif;
-      font-size: 24px;
-  }
-  
-  h1 a{
-    color: white;
-    text-decoration: none;
-  }
-  .headerMenu {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 57rem;
-    font-size: 21px;
-    margin-top: -113px;
+    padding: 15px 50px;
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364); /* sleek gradient */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* subtle shadow */
     font-family: 'Sono', sans-serif;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-.headerMenu li {
-    padding-right: 24px;
+
+/* LOGO STYLING */
+a.logo {
+    font-size: 36px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #FFD700; /* golden color for logo */
+    transition: transform 0.3s;
 }
-li.flightLogo {
-    margin-top: -89px;
-    font-family: 'Rubik', sans-serif;
+a.logo:hover {
+    transform: scale(1.1);
+}
+
+/* MENU LIST STYLING */
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+/* MENU LINKS */
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+/* Hover effect: underline animation */
+.nav ul li a:hover {
+    color: #FFD700;
+}
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s;
+}
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* USERNAME STYLING */
+.nav-right li:first-child a {
+    cursor: default;
+    color: #ffeb3b;
+    font-weight: 600;
+}
+
+/* RESPONSIVE: collapse menu on small screens */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+    a.logo {
+        font-size: 28px;
+    }
 }

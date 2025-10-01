@@ -28,6 +28,7 @@ export class FormComponent {
 
   signIn(data: Login) {
     this.flightService.userLogin(data);
+
     this.flightService.isLoginError.subscribe((isError) => {
       if (isError) {
         this.toastr.error("Email or Password is incorrect")
