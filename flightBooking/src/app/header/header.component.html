@@ -1,20 +1,20 @@
 <nav class="nav">
-  <div [ngSwitch]="menuType">
+  <div [ngSwitch]="menuType" class="titlePosition">
     <!-- Default Menu -->
-    <ul *ngSwitchCase="'default'" class="nav-left">
+    <ul class="nav-left">
       <li><a class="logo" routerLink="/">Air Line</a></li>
     </ul>
 
     <!-- Flight Dashboard Menu -->
-    <ul *ngSwitchCase="'flight'" class="nav-left">
+    <!-- <ul  class="nav-left">
       <li class="flightLogo"><a class="logo" routerLink="/">Air Line</a></li>
-    </ul>
+    </ul> -->
 
-    <!-- <ul *ngSwitchCase="'flight'" class="nav-right">
+    <ul class="nav-right">
       <li>
         <a style="cursor: text">{{ userName | titlecase }}</a>
       </li>
       <li><a (click)="logout()">Logout</a></li>
-    </ul> -->
+    </ul>
   </div>
 </nav>

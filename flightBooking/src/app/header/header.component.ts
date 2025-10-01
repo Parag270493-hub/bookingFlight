@@ -35,7 +35,7 @@ export class HeaderComponent {
     })
   }
   logout() {
-    localStorage.removeItem('flight');
+    // localStorage.removeItem('flight');
     this.router.navigate(['/'])
   }
 }

@@ -659,6 +659,17 @@
       "adult": 1,
       "children": null,
       "infant": null
+    },
+    {
+      "id": "759f",
+      "from": "Nagpur",
+      "to": "Pune",
+      "date": "2025-10-16",
+      "preffered": "airIndia",
+      "seating": "economy",
+      "adult": 1,
+      "children": "",
+      "infant": ""
     }
   ],
   "list": [
