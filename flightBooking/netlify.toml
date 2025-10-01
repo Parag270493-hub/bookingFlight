@@ -1,9 +1,0 @@
-[build]
-  base = "flight-booking"
-  command = "npm install && npm run build"
-  publish = "dist/flight-booking"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
