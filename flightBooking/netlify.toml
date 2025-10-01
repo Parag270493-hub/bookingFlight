@@ -3,7 +3,7 @@
   command = "ng build --configuration production"
   
   # Folder to publish (replace 'your-project-name' with actual name)
-  publish = "dist/your-project-name"
+  publish = "dist/flight-booking"
 
 # Redirect all routes to index.html (Angular SPA support)
 [[redirects]]
