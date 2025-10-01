@@ -1,0 +1,26 @@
+table{
+    text-align: left;
+    color: black;
+    border-collapse: collapse;
+    /* box-shadow: 10px 10px 5px 12px rgb(233, 148, 20); */
+}
+
+table td , table th{
+    border-bottom: 1px solid black;
+    padding: 10px;
+    /* min-width: 160px; */
+    font-family: 'Rubik', sans-serif;
+}
+.list{
+    color: black;
+    font-family: 'Sono', sans-serif;
+}
+.flight-list {
+    position: absolute;
+    left: 62%;
+    top: 25%;
+}
+.bookButton {
+    width: 109%;
+    border-radius: 20px;
+}

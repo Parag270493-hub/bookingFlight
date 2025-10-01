@@ -1,0 +1,79 @@
+<div class="ticket-app">
+  <div class="ticket-preview" aria-live="polite">
+    <div class="ticket">
+      <div class="ticket-left">
+        <div class="airline">
+          <div class="logo">✈️</div>
+          <div class="airline-name">{{ bookedUserData.preffered }}</div>
+        </div>
+
+        <div class="route">
+          <div class="from">
+            <div class="city">{{ bookedUserData.from }}</div>
+            <div class="label">DEPART</div>
+          </div>
+
+          <div class="plane-hr">
+            <div class="dashed"></div>
+            <div class="plane">✈</div>
+            <div class="dashed"></div>
+          </div>
+
+          <div class="to">
+            <div class="city">{{ bookedUserData.to }}</div>
+            <div class="label">ARRIVE</div>
+          </div>
+        </div>
+
+        <div class="passenger">
+          <div>
+            <span class="muted">Passenger</span><br /><strong>{{
+              bookedUserName.name
+            }}</strong>
+          </div>
+          <div>
+            <span class="muted">Flight</span><br /><strong>{{
+              flightNumber
+            }}</strong>
+          </div>
+          <div>
+            <span class="muted">Seat</span><br /><strong>{{
+              seatNumber
+            }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket-right">
+        <div class="pill">
+          <div class="item">
+            <div class="label">Date</div>
+            <div class="value">{{ bookedUserData.date }}</div>
+          </div>
+
+          <div class="item">
+            <div class="label">Boarding</div>
+            <div class="value">{{ boardingGate || "—" }}</div>
+          </div>
+
+          <div class="item">
+            <div class="label">Departure</div>
+            <div class="value">{{ departureTime || "—" }}</div>
+          </div>
+        </div>
+
+        <div class="barcode">
+          <!-- simple visual barcode -->
+          <div class="bars">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="code">
+            {{ flightNumber }} • {{ bookedUserName.name || "—" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

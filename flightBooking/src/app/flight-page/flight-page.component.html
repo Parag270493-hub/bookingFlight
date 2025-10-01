@@ -1,0 +1,64 @@
+<div class="flightPage">
+  <form
+    #FlightInfo="ngForm"
+    (ngSubmit)="flightSearch(FlightInfo.value)"
+    class="common-form"
+  >
+    <div class="searchFlight">
+      <div class="searchForm">
+        <input
+          type="text"
+          id="input-group"
+          ngModel
+          name="where"
+          placeholder="Where"
+          #where="ngModel"
+          required
+        />
+      </div>
+      <div class="searchForm">
+        <input
+          type="date"
+          id="input-group"
+          ngModel
+          name="date"
+          placeholder="Date"
+          #date="ngModel"
+          required
+        />
+      </div>
+      <div class="searchForm">
+        <select
+          id="input-group"
+          ngModel
+          name="guests"
+          #guests="ngModel"
+          required
+        >
+          <option value="">Guests</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4+</option>
+        </select>
+      </div>
+      <div class="searchForm">
+        <a>
+          <button
+            [disabled]="FlightInfo.invalid"
+            type="submit"
+            class="btn btn-warning text-white search flightSearch"
+          >
+            Search Flight
+          </button>
+        </a>
+      </div>
+    </div>
+  </form>
+
+  <app-show-list
+    *ngIf="showFlightTable"
+    [showFlightSearch]="listOfFlightSearch"
+  ></app-show-list>
+  <!--  -->
+</div>

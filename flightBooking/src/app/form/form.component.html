@@ -1,0 +1,107 @@
+<div class="formPage">
+  <div *ngIf="!showLogin" class="singup">
+    <h1>Sign-up</h1>
+    <p class="message-p">{{ addProductMessage }}</p>
+    <form
+      #SingUp="ngForm"
+      (ngSubmit)="userSignUp(SingUp.value)"
+      class="common-form"
+    >
+      <input
+        class="form-input"
+        type="text"
+        name="name"
+        ngModel
+        placeholder="Enter Name"
+        #name="ngModel"
+        required
+      />
+      <p class="invalid-input">
+        <span *ngIf="name.invalid && name.touched"> Please Enter Name</span>
+      </p>
+      <input
+        class="form-input"
+        type="password"
+        name="password"
+        ngModel
+        placeholder="Enter the Password"
+        #password="ngModel"
+        required
+        minlength="2"
+        maxlength="20"
+      />
+      <p class="invalid-input">
+        <span *ngIf="password.invalid && password.touched">
+          Please Enter Valid Password</span
+        >
+      </p>
+      <input
+        class="form-input"
+        type="text"
+        name="email"
+        ngModel
+        placeholder="Enter the Email"
+        #email="ngModel"
+        required
+        email
+      />
+      <p class="invalid-input">
+        <span *ngIf="email.invalid && email.touched">
+          Please Enter Valid Email</span
+        >
+      </p>
+      <button [disabled]="SingUp.invalid" class="form-button">SignUp</button>
+      <a class="auth-toggle-link" (click)="openLogin()"
+        >Already have account ? Click to Login</a
+      >
+    </form>
+  </div>
+
+  <!-- Login Form -->
+
+  <div *ngIf="showLogin" class="singup">
+    <h1>Login</h1>
+    <p class="error-p">{{ registrationErrorMessage }}</p>
+    <form
+      #SingIn="ngForm"
+      (ngSubmit)="signIn(SingIn.value)"
+      class="common-form"
+    >
+      <input
+        class="form-input"
+        type="text"
+        name="email"
+        ngModel
+        placeholder="Enter the Email"
+        #email="ngModel"
+        required
+        email
+      />
+      <p class="invalid-input">
+        <span *ngIf="email.invalid && email.touched">
+          Please Enter Valid Value</span
+        >
+      </p>
+      <input
+        class="form-input"
+        type="password"
+        name="password"
+        ngModel
+        placeholder="Enter the Password"
+        #password="ngModel"
+        required
+        minlength="2"
+        maxlength="20"
+      />
+      <p class="invalid-input">
+        <span *ngIf="password.invalid && password.touched">
+          Please Enter Valid Password</span
+        >
+      </p>
+      <button [disabled]="SingIn.invalid" class="form-button">Login</button>
+      <a (click)="openSignUp()" class="auth-toggle-link">
+        Don't have account ? Click to Sign Up</a
+      >
+    </form>
+  </div>
+</div>

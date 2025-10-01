@@ -1,0 +1,180 @@
+<div class="flightDetails">
+  <div class="formStyle">
+    <div class="container">
+      <!--container-->
+
+      <form
+        #ticketBooking="ngForm"
+        (ngSubmit)="ticketBook(ticketBooking.value)"
+        class="form-group"
+      >
+        <!--form-->
+        <h1 class="text-center bookingForm">Airline Booking Form</h1>
+        <div id="form">
+          <!--form-->
+          <h3 class="text-white">Booking Details</h3>
+
+          <div id="input">
+            <!--input-->
+
+            <input
+              type="text"
+              id="input-group"
+              ngModel
+              name="from"
+              placeholder="From"
+              #from="ngModel"
+              required
+            />
+            <p class="invalid-input">
+              <span *ngIf="from.invalid && from.touched">
+                Please Enter Departure</span
+              >
+            </p>
+            <input
+              type="text"
+              id="input-group"
+              ngModel
+              name="to"
+              placeholder="To"
+              #to="ngModel"
+              required
+            />
+            <p class="invalid-input">
+              <span *ngIf="to.invalid && to.touched">
+                Please Enter Destination</span
+              >
+            </p>
+            <input
+              type="date"
+              id="input-group"
+              ngModel
+              name="date"
+              placeholder="Departure Date dd/mm/yyyy"
+              #date="ngModel"
+              required
+            />
+            <p class="invalid-input">
+              <span *ngIf="date.invalid && date.touched">
+                Please Enter Date</span
+              >
+            </p>
+            <select
+              id="input-group"
+              ngModel
+              name="preffered"
+              style="background: black"
+              #preffered="ngModel"
+              required
+            >
+              <option value="">Preffered Airline</option>
+              <option value="indiGo">IndiGo</option>
+              <option value="airIndia">AirIndia</option>
+              <option value="SpiceJet">SpiceJet</option>
+            </select>
+            <p class="invalid-input">
+              <span *ngIf="preffered.invalid && preffered.touched">
+                Please Enter Preffered Airlines</span
+              >
+            </p>
+            <select
+              id="input-group"
+              ngModel
+              name="seating"
+              style="background: black"
+              #seating="ngModel"
+              required
+            >
+              <option value="">Preffered Seating</option>
+              <option value="economy">Economy Class</option>
+              <option value="business">Business Class</option>
+              <option value="first">First Class</option>
+            </select>
+            <p class="invalid-input">
+              <span *ngIf="seating.invalid && seating.touched">
+                Please Enter Seating</span
+              >
+            </p>
+          </div>
+          <!--input-->
+
+          <div id="input2">
+            <!--input2-->
+            <input
+              type="number"
+              id="input-group"
+              ngModel
+              name="adult"
+              placeholder="Adult"
+              #adult="ngModel"
+              required
+            />
+            <input
+              type="number"
+              id="input-group"
+              ngModel
+              name="children"
+              placeholder="Children(2-11years)"
+            />
+            <input
+              type="number"
+              id="input-group"
+              ngModel
+              name="infant"
+              placeholder="infant(under 2years)"
+            />
+          </div>
+          <!--input2-->
+
+          <div class="bookTicket">
+            <a>
+              <button
+                [disabled]="ticketBooking.invalid"
+                type="submit"
+                class="btn btn-warning text-white bookNow"
+              >
+                Book Now
+              </button>
+            </a>
+            <button type="reset" class="btn btn-primary">Clear Form</button>
+          </div>
+        </div>
+        <!--form-->
+      </form>
+      <!--form-->
+    </div>
+    <!--container-->
+  </div>
+
+  <div *ngIf="showFlightList" class="flight-list">
+    <h1 class="list">Flight List</h1>
+    <p class="flightMessage">{{ flightBookedMessage | titlecase }}</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Flight ID</th>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th>Time</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listOfFlight">
+          <td class="col-md-2">{{ item.flightId }}</td>
+          <td>{{ item.from }}</td>
+          <td>{{ item.to }}</td>
+          <td>{{ item.time }}</td>
+          <td>
+            <button
+              class="btn btn-warning text-white flightBooking"
+              (click)="bookFlight()"
+            >
+              Book Now
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

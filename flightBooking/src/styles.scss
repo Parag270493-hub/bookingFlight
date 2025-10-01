@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@use 'ngx-toastr/toastr';
+body {
+    font-family: sans-serif;
+}
+
+// .container {
+//     margin-left: 5%;
+//     margin-right: 5%;
+//     margin-top: 50px;
+// }
+
+.common-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+.form-input {
+    height: 35px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    padding-left: 15px;
+    color: black;
+}
+
+.form-button {
+    height: 35px;
+    border: 1px solid white;
+    color: black;
+    cursor: pointer;
+}
+
+.error-p{
+    color: red;
+}
+button:disabled{
+    cursor: not-allowed;
+  }

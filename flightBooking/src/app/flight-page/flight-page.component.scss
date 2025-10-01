@@ -1,0 +1,39 @@
+.flightPage{
+    background-image: url(../../assets/Image/travel-5219496_1920.jpg);
+    width: 1536px;
+    height: 713px;
+    background-size: cover;
+    margin-top: -116px;
+    margin-left: -120px;
+}
+.searchFlight {
+    margin-top: 5rem;
+    margin-left: 14rem;
+    width: 139%;
+    display: flex;
+    justify-content: center;
+}
+.searchForm {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+ #input-group{
+    width: 150px;
+    margin: -3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    color: black;
+    transition: width 1s;
+    font-family: 'Rubik', sans-serif;
+}
+#input-group:hover{
+    width: 200px;
+}
+.flightSearch {
+    width: 119px;
+    border-radius: 35px;
+}

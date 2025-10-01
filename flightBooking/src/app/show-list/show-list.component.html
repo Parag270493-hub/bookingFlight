@@ -1,0 +1,30 @@
+<div class="flight-list">
+  <h1 class="list">List of Flight</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Flight ID</th>
+        <th>Departure</th>
+        <th>Destination</th>
+        <th>Time</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of showFlightSearch">
+        <td class="col-md-2">{{ item.flightId }}</td>
+        <td>{{ item.from }}</td>
+        <td>{{ item.to }}</td>
+        <td>{{ item.time }}</td>
+        <td>
+          <button
+            (click)="showLoginForm()"
+            class="btn btn-warning text-white bookButton"
+          >
+            Book Now
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
